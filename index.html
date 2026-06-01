@@ -7,7 +7,7 @@
     <title>Mayur Naik — Software Engineer</title>
     <meta name="description" content="Portfolio of Mayur Naik, a Software Engineer based in Ankola, Karnataka.">
     
-    <!-- Phosphor Icons (Premium Minimalist Vector Icons) -->
+    <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
     <!-- Google Fonts: Inter -->
@@ -74,7 +74,6 @@
         .nav-link { 
             color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; 
             transition: color 0.4s var(--ease-out); 
-            
             &:hover { color: #ffffff; }
         }
 
@@ -96,7 +95,6 @@
             align-items: center; 
             padding-top: 80px; 
             border-bottom: 1px solid var(--border-light); 
-            position: relative;
         }
         
         .hero-content { display: flex; flex-direction: column; align-items: flex-start; z-index: 2; }
@@ -215,45 +213,74 @@
             }
         }
 
-        /* --- EXPERIENCE TIMELINE SCROLL ENGINE --- */
+        /* --- STRUCTURALLY REFINED TIMELINE ENGINE --- */
         .timeline { 
-            position: relative; padding-left: 48px; display: flex; 
-            flex-direction: column; gap: 64px; 
+            position: relative; 
+            display: flex; 
+            flex-direction: column; 
         }
         
-        /* The Static Background Track */
-        .timeline::before {
-            content: ''; position: absolute; left: 0; top: 12px; bottom: 0; width: 2px;
+        /* Explicit DOM Container for the Track */
+        .timeline-track {
+            position: absolute;
+            left: 5px; /* Exactly centers the 2px line inside the 12px node */
+            top: 12px;
+            bottom: 0;
+            width: 2px;
             background: var(--border-light);
             border-radius: 100px;
+            z-index: 1;
         }
 
-        /* The Animated Scroll Line */
+        /* The Animated Progress Fill */
         .timeline-progress {
-            position: absolute; left: 0; top: 12px; bottom: 0; width: 2px;
-            background: linear-gradient(to bottom, #ffffff, #a1a1aa);
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #ffffff, #8f8f97);
             transform-origin: top;
-            transform: scaleY(0); /* Driven by GSAP */
-            z-index: 1;
+            transform: scaleY(0); /* Driven precisely by GSAP */
             border-radius: 100px;
             box-shadow: 0 0 10px rgba(255,255,255,0.4);
         }
         
-        .timeline-item { position: relative; }
+        .timeline-item { 
+            position: relative; 
+            padding-left: 48px;
+            padding-bottom: 64px; /* Eliminates the need for flex gaps */
+        }
+        .timeline-item:last-child { padding-bottom: 0; }
         
-        /* The Timeline Node */
-        .timeline-item::before { 
-            content: ''; position: absolute; left: -53px; top: 5px; 
-            width: 12px; height: 12px; border-radius: 50%; background: var(--bg); 
-            border: 2px solid var(--border-strong); transition: all 0.6s var(--ease-out);
+        /* Explicit DOM Node (No more ::before pseudo-element hacks) */
+        .timeline-node { 
+            position: absolute; 
+            left: 0; 
+            top: 6px; 
+            width: 12px; height: 12px; 
+            border-radius: 50%; 
+            background: var(--bg); 
+            border: 2px solid var(--border-strong); 
+            transition: all 0.5s var(--ease-out);
             z-index: 2;
         }
         
-        /* The Node Activated State */
-        .timeline-item.is-active::before { 
-            border-color: #ffffff; background: #ffffff; 
-            box-shadow: 0 0 16px rgba(255,255,255,0.8);
+        /* Smooth Content Reveal */
+        .timeline-content {
+            opacity: 0.4;
+            transform: translateX(-12px);
+            transition: all 0.6s var(--ease-out);
+        }
+
+        /* --- THE ACTIVE STATE --- */
+        .timeline-item.is-active .timeline-node { 
+            border-color: #ffffff; 
+            background: #ffffff; 
+            box-shadow: 0 0 16px rgba(255,255,255,0.8), 0 0 0 4px rgba(255,255,255,0.1); /* Subtle premium ring */
             transform: scale(1.3);
+        }
+        
+        .timeline-item.is-active .timeline-content {
+            opacity: 1;
+            transform: translateX(0);
         }
         
         .role { font-size: 1.5rem; font-weight: 500; margin-bottom: 8px; }
@@ -299,9 +326,8 @@
             .project-item:nth-child(even) .project-content { order: 0; }
             .project-list { gap: 80px; }
             
-            /* Recalculating timeline math for mobile layout */
-            .timeline { padding-left: 32px; }
-            .timeline-item::before { left: -37px; } 
+            /* Clean mobile adjustment - zero negative margin hacks required */
+            .timeline-item { padding-left: 32px; padding-bottom: 48px; }
             
             .footer-bottom { flex-direction: column; gap: 24px; }
         }
@@ -459,34 +485,45 @@
             </div>
 
             <div class="timeline">
-                <!-- The Animated Scroll Progress Bar -->
-                <div class="timeline-progress"></div>
-
-                <div class="timeline-item gsap-fade">
-                    <span class="duration">2023 — Present</span>
-                    <h3 class="role text-metallic">Freelance Software Engineer</h3>
-                    <p class="company"><i class="ph ph-buildings"></i> Independent</p>
-                    <p class="timeline-desc">
-                        Designing and developing custom web applications for independent clients. Managing the entire software lifecycle from database architecture to frontend deployment and server management.
-                    </p>
+                <!-- Explicit Architected Track -->
+                <div class="timeline-track">
+                    <div class="timeline-progress"></div>
                 </div>
 
-                <div class="timeline-item gsap-fade">
-                    <span class="duration">2022 — 2023</span>
-                    <h3 class="role text-metallic">Frontend Developer</h3>
-                    <p class="company"><i class="ph ph-git-merge"></i> Open Source Contributions</p>
-                    <p class="timeline-desc">
-                        Contributed to various open-source libraries. Focused on refining UI components, writing technical documentation, and optimizing bundle sizes for React-based projects.
-                    </p>
+                <div class="timeline-item">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-content">
+                        <span class="duration">2023 — Present</span>
+                        <h3 class="role text-metallic">Freelance Software Engineer</h3>
+                        <p class="company"><i class="ph ph-buildings"></i> Independent</p>
+                        <p class="timeline-desc">
+                            Designing and developing custom web applications for independent clients. Managing the entire software lifecycle from database architecture to frontend deployment and server management.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="timeline-item gsap-fade">
-                    <span class="duration">2021 — 2022</span>
-                    <h3 class="role text-metallic">Software Engineering Intern</h3>
-                    <p class="company"><i class="ph ph-code-block"></i> Tech Startup</p>
-                    <p class="timeline-desc">
-                        Assisted in developing scalable microservices and building interactive UI components for a B2B dashboard, directly reducing application load times by 30%.
-                    </p>
+                <div class="timeline-item">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-content">
+                        <span class="duration">2022 — 2023</span>
+                        <h3 class="role text-metallic">Frontend Developer</h3>
+                        <p class="company"><i class="ph ph-git-merge"></i> Open Source Contributions</p>
+                        <p class="timeline-desc">
+                            Contributed to various open-source libraries. Focused on refining UI components, writing technical documentation, and optimizing bundle sizes for React-based projects.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-content">
+                        <span class="duration">2021 — 2022</span>
+                        <h3 class="role text-metallic">Software Engineering Intern</h3>
+                        <p class="company"><i class="ph ph-code-block"></i> Tech Startup</p>
+                        <p class="timeline-desc">
+                            Assisted in developing scalable microservices and building interactive UI components for a B2B dashboard, directly reducing application load times by 30%.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -517,19 +554,16 @@
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 
     <script>
-        // Fluid Smooth Scroll (Lenis with lerp for native elasticity)
+        // Fluid Smooth Scroll 
         const lenis = new Lenis({
             lerp: 0.07, 
             smoothWheel: true
         });
 
-        // Sync Lenis with GSAP ScrollTrigger
+        // Sync Lenis with GSAP
         gsap.registerPlugin(ScrollTrigger);
         lenis.on('scroll', ScrollTrigger.update);
-        
-        gsap.ticker.add((time) => {
-            lenis.raf(time * 1000);
-        });
+        gsap.ticker.add((time) => { lenis.raf(time * 1000); });
         gsap.ticker.lagSmoothing(0);
 
         // Immediate entry for Hero elements
@@ -537,44 +571,33 @@
             { opacity: 1, y: 0, duration: 1.2, stagger: 0.15, ease: "power4.out", delay: 0.1 }
         );
 
-        // Standard Scroll Reveal for sections
+        // Standard Scroll Reveal for basic sections
         gsap.utils.toArray('.gsap-fade').forEach(element => {
-            gsap.to(element, 
-                { 
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top 85%", 
-                        toggleActions: "play none none none"
-                    },
-                    opacity: 1, 
-                    y: 0, 
-                    duration: 1.2, 
-                    ease: "power4.out"
-                }
-            );
+            gsap.to(element, { 
+                scrollTrigger: { trigger: element, start: "top 85%", toggleActions: "play none none none" },
+                opacity: 1, y: 0, duration: 1.2, ease: "power4.out"
+            });
         });
 
-        // TIMELINE SCROLL ENGINE
-        // 1. Draw the line smoothly as the user scrolls
+        // REFINED TIMELINE ENGINE
+        // 1. Draw the line mapped perfectly to the viewport center
         gsap.to(".timeline-progress", {
             scrollTrigger: {
                 trigger: ".timeline",
-                start: "top 60%",     // Begins when timeline enters viewport center
-                end: "bottom 60%",    // Ends when timeline finishes passing
-                scrub: 1              // Links animation strictly to scroll bar
+                start: "top 50%",    // Starts drawing exactly when timeline hits screen center
+                end: "bottom 50%",   // Finishes exactly when timeline leaves screen center
+                scrub: 1             // Smooth tracking
             },
             scaleY: 1,
             ease: "none"
         });
 
-        // 2. Light up the individual nodes when the line hits them
+        // 2. Light up nodes precisely as the line hits them
         gsap.utils.toArray('.timeline-item').forEach(item => {
-            gsap.to(item, {
-                scrollTrigger: {
-                    trigger: item,
-                    start: "top 60%", 
-                    toggleClass: "is-active"
-                }
+            ScrollTrigger.create({
+                trigger: item,
+                start: "top 50%",    // Triggers at the exact mathematical moment the line arrives
+                toggleClass: "is-active"
             });
         });
     </script>

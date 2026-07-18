@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Contact — Mayur Naik</title>
+    <meta name="description" content="Get in touch with Mayur Naik for cloud engineering, software architecture, and collaboration opportunities.">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- PROFESSIONAL EDITORIAL DESIGN SYSTEM --- */
+        :root {
+            --bg: #09090b; 
+            --bg-secondary: #18181b;
+            --text-primary: #e4e4e7; 
+            --text-secondary: #8f8f97;
+            --border-light: rgba(255, 255, 255, 0.06);
+            --border-strong: rgba(255, 255, 255, 0.12);
+            --curve: 24px; 
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html.lenis { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto; }
+        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+        .lenis.lenis-stopped { overflow: hidden; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* --- METALLIC TEXT UTILITY --- */
+        .text-metallic {
+            background: linear-gradient(135deg, #ffffff 20%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            padding-bottom: 0.1em;
+            margin-bottom: -0.1em;
+            line-height: 1.2;
+        }
+
+        /* --- ENGINEERING DOT GRID BACKGROUND --- */
+        .bg-grid {
+            position: fixed; inset: 0; z-index: -2; pointer-events: none;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 32px 32px;
+            mask-image: radial-gradient(ellipse at center, black 20%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse at top, black 20%, transparent 80%);
+        }
+
+        /* --- TOP NAVIGATION --- */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            padding: 24px 48px; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(9, 9, 11, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-brand { font-size: 1rem; font-weight: 600; letter-spacing: -0.02em; color: var(--text-primary); text-decoration: none; }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-link { 
+            color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; 
+            transition: color 0.4s var(--ease-out); 
+            &:hover { color: #ffffff; }
+        }
+        .nav-link.active { color: #ffffff; }
+
+        /* --- LAYOUT UTILITIES --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 48px; } 
+        .gsap-init, .gsap-fade { opacity: 0; transform: translateY(24px); }
+        
+        .section-padding { padding: 100px 0; border-bottom: 1px solid var(--border-light); }
+        .section-header { display: grid; grid-template-columns: 1fr 3fr; margin-bottom: 48px; align-items: baseline;}
+        .section-num { font-size: 0.85rem; font-weight: 500; color: var(--text-secondary); letter-spacing: 0.05em; }
+        .section-title { font-size: 2.5rem; font-weight: 400; letter-spacing: -0.03em; }
+
+        /* --- CONTACT HERO SECTION --- */
+        .contact-hero { 
+            min-height: 45vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 160px; 
+            border-bottom: 1px solid var(--border-light); 
+        }
+        .hero-title { font-size: clamp(3rem, 8vw, 6rem); font-weight: 600; line-height: 0.95; letter-spacing: -0.04em; margin-bottom: 24px; }
+        .hero-desc { font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; font-weight: 300; line-height: 1.6; }
+
+        /* --- TOP SECTION: DIRECT OUTPOSTS GRID --- */
+        .platform-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        
+        .platform-item {
+            display: flex; align-items: center; justify-content: space-between;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 24px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.4s var(--ease-out);
+        }
+        .platform-item:hover {
+            border-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+            background: rgba(24, 24, 27, 0.5);
+        }
+        
+        .platform-info { display: flex; align-items: center; gap: 16px; }
+        .platform-info i { font-size: 1.75rem; color: var(--text-secondary); }
+        .platform-name { font-weight: 500; font-size: 1.05rem; }
+        .platform-handle { font-size: 0.9rem; color: var(--text-secondary); font-weight: 300; display: block; margin-top: 2px; }
+        
+        .platform-action { font-size: 0.9rem; color: var(--text-secondary); display: flex; align-items: center; gap: 4px; }
+        .platform-item:hover .platform-action { color: #ffffff; }
+
+        /* --- BOTTOM SECTION: MESSAGE LAYOUT --- */
+        .bottom-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; }
+        
+        /* Message Input Elements */
+        .contact-form { display: flex; flex-direction: column; gap: 28px; }
+        .form-group { display: flex; flex-direction: column; gap: 12px; }
+        .form-label { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); }
+        
+        .form-input {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 18px 24px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 400;
+            transition: all 0.4s var(--ease-out);
+            outline: none;
+        }
+        .form-input:focus {
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(24, 24, 27, 0.6);
+        }
+        textarea.form-input { min-height: 180px; resize: vertical; }
+
+        .btn-submit {
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 18px 36px; border-radius: 100px;
+            background: #ffffff; color: var(--bg); font-size: 1rem; font-weight: 600; text-decoration: none; border: none; cursor: pointer;
+            transition: all 0.4s var(--ease-out); width: fit-content;
+        }
+        .btn-submit i { transition: transform 0.4s var(--ease-out); }
+        .btn-submit:hover { 
+            transform: translateY(-2px); background: #d4d4d8; 
+            i { transform: translateX(4px); }
+        }
+
+        /* Side panel containing metadata footprint */
+        .side-panel { display: flex; flex-direction: column; gap: 24px; }
+        .panel-desc { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.6; font-weight: 300; }
+        .crypto-key { font-family: monospace; font-size: 0.8rem; color: var(--text-secondary); background: rgba(255,255,255,0.02); padding: 16px; border-radius: 12px; border: 1px solid var(--border-light); word-break: break-all; margin-top: 12px; }
+
+        /* --- FOOTER ELEMENTS --- */
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 80px; padding-top: 32px; border-top: 1px solid var(--border-light); color: var(--text-secondary); font-size: 0.9rem; }
+        
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 900px) {
+            nav { padding: 24px; }
+            .nav-links { display: none; }
+            
+            .container { padding: 0 24px; }
+            .section-padding { padding: 60px 0; }
+            .section-header { grid-template-columns: 1fr; gap: 12px; margin-bottom: 32px; }
+            
+            .contact-hero { padding-top: 140px; min-height: auto; padding-bottom: 40px; }
+            .platform-grid { grid-template-columns: 1fr; gap: 16px; }
+            
+            .bottom-grid { grid-template-columns: 1fr; gap: 48px; }
+            .btn-submit { width: 100%; }
+            
+            .footer-bottom { flex-direction: column; gap: 24px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+
+    <nav>
+        <a href="index.html" class="nav-brand">Mayur Naik</a>
+        <div class="nav-links">
+            <a href="about.html" class="nav-link">About</a>
+            <a href="works.html" class="nav-link">Work</a>
+            <a href="index.html#experience" class="nav-link">Experience</a>
+            <a href="contact.html" class="nav-link active">Contact</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+        <!-- --- CONTACT HERO --- -->
+        <section class="contact-hero">
+            <h1 class="hero-title text-metallic gsap-init">Connect.</h1>
+            <p class="hero-desc gsap-init">
+                Reach out to initialize engineering assignments, architectural reviews, or full-stack pipeline builds.
+            </p>
+        </section>
+
+        <!-- --- TOP SECTION: DIRECT OUTPOSTS --- -->
+        <section class="section-padding">
+            <div class="section-header gsap-fade">
+                <div class="section-num">01</div>
+                <h2 class="section-title text-metallic">Direct Outposts</h2>
+            </div>
+            
+            <div class="platform-grid gsap-fade">
+                <!-- Email -->
+                <a href="mailto:mayur.naik@example.com" class="platform-item">
+                    <div class="platform-info">
+                        <i class="ph ph-envelope-simple"></i>
+                        <div>
+                            <span class="platform-name">Email</span>
+                            <span class="platform-handle">mayur.naik@example.com</span>
+                        </div>
+                    </div>
+                    <span class="platform-action">Write <i class="ph ph-arrow-up-right"></i></span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/yourusername" target="_blank" class="platform-item">
+                    <div class="platform-info">
+                        <i class="ph ph-linkedin-logo"></i>
+                        <div>
+                            <span class="platform-name">LinkedIn</span>
+                            <span class="platform-handle">in/mayurnaik</span>
+                        </div>
+                    </div>
+                    <span class="platform-action">Connect <i class="ph ph-arrow-up-right"></i></span>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/yourusername" target="_blank" class="platform-item">
+                    <div class="platform-info">
+                        <i class="ph ph-github-logo"></i>
+                        <div>
+                            <span class="platform-name">GitHub</span>
+                            <span class="platform-handle">github.com/mayurnaik</span>
+                        </div>
+                    </div>
+                    <span class="platform-action">Review <i class="ph ph-arrow-up-right"></i></span>
+                </a>
+
+                <!-- Twitter / X -->
+                <a href="https://x.com/yourusername" target="_blank" class="platform-item">
+                    <div class="platform-info">
+                        <i class="ph ph-twitter-logo"></i>
+                        <div>
+                            <span class="platform-name">Twitter / X</span>
+                            <span class="platform-handle">@mayurnaik_dev</span>
+                        </div>
+                    </div>
+                    <span class="platform-action">Follow <i class="ph ph-arrow-up-right"></i></span>
+                </a>
+
+                <!-- Discord -->
+                <div class="platform-item">
+                    <div class="platform-info">
+                        <i class="ph ph-discord-logo"></i>
+                        <div>
+                            <span class="platform-name">Discord</span>
+                            <span class="platform-handle">mayurnaik#0000</span>
+                        </div>
+                    </div>
+                    <span class="platform-action" style="pointer-events: none; opacity: 0.5;">Active Identity</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- BOTTOM SECTION: MESSAGE PAYLOAD & METADATA --- -->
+        <section class="section-padding">
+            <div class="section-header gsap-fade">
+                <div class="section-num">02</div>
+                <h2 class="section-title text-metallic">Deep Communication</h2>
+            </div>
+            
+            <div class="bottom-grid">
+                <!-- Messaging Interface Terminal -->
+                <div class="gsap-fade">
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Identification / Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Alex Rivera" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="email">Return Coordinate / Email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="alex@company.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="message">Project Parameters / Message</label>
+                            <textarea id="message" name="message" class="form-input" placeholder="Outline the design constraints or full-stack engineering requirements..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">
+                            Transmit Payload <i class="ph ph-paper-plane-tilt"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Side Panel Context & Footprint verification -->
+                <div class="side-panel gsap-fade">
+                    <p class="panel-desc">
+                        For targeted inquiries regarding contract cycles, distributed backend orchestration strategies, or project specifications, use the secure messaging core. Emails are evaluated daily.
+                    </p>
+                    <div>
+                        <label class="form-label">Verification Fingerprint</label>
+                        <div class="crypto-key">
+                            ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDoZ9mXyPrTq8Kz2kBl1NzM5T...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- FOOTER --- -->
+        <footer>
+            <div class="footer-bottom gsap-fade">
+                <p>© 2026 Mayur Naik. All rights reserved.</p>
+                <p>Designed for persistent cross-platform speed layout profiles.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <script>
+        // Fluid Smooth Scroll 
+        const lenis = new Lenis({
+            lerp: 0.07, 
+            smoothWheel: true
+        });
+
+        // Sync Lenis with GSAP
+        gsap.registerPlugin(ScrollTrigger);
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+
+        // Immediate entry for Hero elements
+        gsap.to('.gsap-init', 
+            { opacity: 1, y: 0, duration: 1.2, stagger: 0.15, ease: "power4.out", delay: 0.1 }
+        );
+
+        // Standard Scroll Reveal for basic sections
+        gsap.utils.toArray('.gsap-fade').forEach(element => {
+            gsap.to(element, { 
+                scrollTrigger: { trigger: element, start: "top 85%", toggleActions: "play none none none" },
+                opacity: 1, y: 0, duration: 1.2, ease: "power4.out"
+            });
+        });
+    </script>
+</body>
+</html>

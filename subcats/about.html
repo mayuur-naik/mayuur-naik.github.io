@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>About — Mayur Naik</title>
+    <meta name="description" content="Biography, core stack, and engineering philosophy of Mayur Naik, a Cloud & Software Engineer.">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- PROFESSIONAL EDITORIAL DESIGN SYSTEM --- */
+        :root {
+            --bg: #09090b; 
+            --bg-secondary: #18181b;
+            --text-primary: #e4e4e7; 
+            --text-secondary: #8f8f97;
+            --border-light: rgba(255, 255, 255, 0.06);
+            --border-strong: rgba(255, 255, 255, 0.12);
+            --curve: 24px; 
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html.lenis { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto; }
+        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+        .lenis.lenis-stopped { overflow: hidden; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* --- METALLIC TEXT UTILITY --- */
+        .text-metallic {
+            background: linear-gradient(135deg, #ffffff 20%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            padding-bottom: 0.1em;
+            margin-bottom: -0.1em;
+            line-height: 1.2;
+        }
+
+        /* --- ENGINEERING DOT GRID BACKGROUND --- */
+        .bg-grid {
+            position: fixed; inset: 0; z-index: -2; pointer-events: none;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 32px 32px;
+            mask-image: radial-gradient(ellipse at center, black 20%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse at top, black 20%, transparent 80%);
+        }
+
+        /* --- TOP NAVIGATION --- */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            padding: 24px 48px; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(9, 9, 11, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-brand { font-size: 1rem; font-weight: 600; letter-spacing: -0.02em; color: var(--text-primary); text-decoration: none; }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-link { 
+            color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; 
+            transition: color 0.4s var(--ease-out); 
+            &:hover { color: #ffffff; }
+        }
+        .nav-link.active { color: #ffffff; }
+
+        /* --- LAYOUT UTILITIES --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 48px; } 
+        .gsap-init, .gsap-fade { opacity: 0; transform: translateY(24px); }
+        
+        .section-padding { padding: 160px 0; border-bottom: 1px solid var(--border-light); }
+        .section-header { display: grid; grid-template-columns: 1fr 3fr; margin-bottom: 80px; align-items: baseline;}
+        .section-num { font-size: 0.85rem; font-weight: 500; color: var(--text-secondary); letter-spacing: 0.05em; }
+        .section-title { font-size: 2.5rem; font-weight: 400; letter-spacing: -0.03em; }
+
+        /* --- ABOUT HERO SECTION --- */
+        .about-hero { 
+            min-height: 85vh; 
+            display: grid; 
+            grid-template-columns: 1.5fr 1fr; 
+            gap: 64px;
+            align-items: center; 
+            padding-top: 140px; 
+            border-bottom: 1px solid var(--border-light); 
+        }
+        
+        .hero-content { display: flex; flex-direction: column; align-items: flex-start; z-index: 2; }
+        .hero-title { font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 600; line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 32px; }
+        .hero-title span { 
+            font-weight: 400; display: block; margin-top: 8px;
+            background: linear-gradient(90deg, #a1a1aa 0%, #52525b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+        .hero-desc { font-size: 1.35rem; color: var(--text-secondary); font-weight: 300; line-height: 1.6; }
+
+        /* --- BIO & PHILOSOPHY MODULE --- */
+        .bio-grid { display: grid; grid-template-columns: 1.8fr 1.2fr; gap: 80px; }
+        .bio-paragraphs { display: flex; flex-direction: column; gap: 32px; }
+        .bio-text-lead { font-size: 1.6rem; line-height: 1.6; font-weight: 300; color: var(--text-primary); }
+        .bio-text { font-size: 1.1rem; line-height: 1.7; font-weight: 300; color: var(--text-secondary); }
+        
+        /* Sidebar block styling */
+        .philosophy-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--curve);
+            padding: 40px;
+            height: fit-content;
+        }
+        .philosophy-title { font-size: 1.25rem; font-weight: 500; margin-bottom: 16px; color: var(--text-primary); }
+        .philosophy-desc { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; font-weight: 300; }
+
+        /* --- TECHNICAL STACK MATRIX --- */
+        .stack-matrix { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .matrix-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--curve);
+            padding: 40px;
+            transition: all 0.5s var(--ease-out);
+        }
+        .matrix-box:hover {
+            border-color: rgba(255,255,255,0.25);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        .matrix-icon { font-size: 2rem; color: var(--text-primary); margin-bottom: 24px; display: block; }
+        .matrix-title { font-size: 1.35rem; font-weight: 500; margin-bottom: 16px; }
+        .matrix-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .matrix-item { display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.95rem; font-weight: 300; }
+        .matrix-item::before { content: ''; width: 4px; height: 4px; background: var(--border-strong); border-radius: 50%; }
+
+        /* --- QUICK INFO LIST --- */
+        .info-list { width: 100%; border-top: 1px solid var(--border-light); }
+        .info-item { 
+            display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; 
+            padding: 24px 0; border-bottom: 1px solid var(--border-light); font-size: 1rem; 
+        }
+        .info-label { display: flex; align-items: center; gap: 12px; color: var(--text-secondary); flex-shrink: 0; }
+        .info-label i { font-size: 1.2rem; }
+        .info-val { color: var(--text-primary); font-weight: 500; text-align: right; }
+
+        /* --- FOOTER / CONTACT --- */
+        footer { padding: 120px 0; text-align: center; }
+        .contact-title { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 500; letter-spacing: -0.04em; margin-bottom: 48px; }
+        
+        .btn-large {
+            display: inline-flex; align-items: center; gap: 12px; background: #ffffff; color: var(--bg);
+            padding: 20px 48px; border-radius: 100px; font-size: 1.1rem; font-weight: 600; text-decoration: none; transition: all 0.4s var(--ease-out);
+            
+            i { transition: transform 0.4s var(--ease-out); }
+            &:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(255,255,255,0.1); i { transform: translateX(4px); } }
+        }
+
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 120px; padding-top: 32px; border-top: 1px solid var(--border-light); color: var(--text-secondary); font-size: 0.9rem; }
+        .socials { display: flex; gap: 24px; }
+        .social-link { 
+            display: flex; align-items: center; gap: 8px; color: var(--text-secondary); text-decoration: none; transition: color 0.4s var(--ease-out); 
+            &:hover { color: #ffffff; }
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 900px) {
+            nav { padding: 24px; }
+            .nav-links { display: none; }
+            
+            .container { padding: 0 24px; }
+            .section-padding { padding: 100px 0; }
+            .section-header { grid-template-columns: 1fr; gap: 16px; margin-bottom: 48px; }
+            
+            .about-hero { grid-template-columns: 1fr; padding-top: 140px; min-height: auto; gap: 32px; }
+            
+            .bio-grid { grid-template-columns: 1fr; gap: 40px; }
+            .stack-matrix { grid-template-columns: 1fr; gap: 24px; }
+            
+            .footer-bottom { flex-direction: column; gap: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+
+    <nav>
+        <a href="index.html" class="nav-brand">Mayur Naik</a>
+        <div class="nav-links">
+            <a href="about.html" class="nav-link active">About</a>
+            <a href="index.html#work" class="nav-link">Work</a>
+            <a href="index.html#experience" class="nav-link">Experience</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+        <!-- --- ABOUT HERO SECTION --- -->
+        <section class="about-hero">
+            <div class="hero-content">
+                <h1 class="hero-title text-metallic gsap-init">
+                    Engineering scale
+                    <span>with structural intent.</span>
+                </h1>
+            </div>
+            <div class="gsap-init">
+                <p class="hero-desc">
+                    I focus strictly on full-stack optimization, lightweight cloud architectures, and deterministic interfaces.
+                </p>
+            </div>
+        </section>
+
+        <!-- --- BIOGRAPHY SECTION --- -->
+        <section id="biography" class="section-padding">
+            <div class="section-header gsap-fade">
+                <div class="section-num">01</div>
+                <h2 class="section-title text-metallic">Biography</h2>
+            </div>
+            
+            <div class="bio-grid">
+                <div class="bio-paragraphs gsap-fade">
+                    <p class="bio-text-lead">
+                        I am an 18-year-old software developer based in Ankola, Karnataka, exploring the intersection of distributed systems and intuitive client engineering.
+                    </p>
+                    <p class="bio-text">
+                        Currently pursuing my B.Tech degree in Computer Science, I dedicate my cycles to analyzing application bottlenecks, architecting schema patterns, and mapping scalable micro-frontends. I don’t build features just to hit minimum criteria; I engineer software layers to ensure rapid responses and maintainable dependencies.
+                    </p>
+                    <p class="bio-text">
+                        Outside of traditional engineering domains, I build custom utility systems and contribute programmatic refinements across open-source ecosystems. My philosophy rests on a commitment to zero unnecessary dependencies, clean document mapping, and absolute computational clarity.
+                    </p>
+                </div>
+                
+                <div class="philosophy-card gsap-fade">
+                    <h3 class="philosophy-title">Core Principles</h3>
+                    <p class="philosophy-desc">
+                        Performance is never treated as a secondary feature. I specialize in designing streamlined data models, eliminating payload overhead, and optimizing client-side calculations so applications load instantly and stay fast.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- TECHNICAL MATRIX SECTION --- -->
+        <section id="stack" class="section-padding">
+            <div class="section-header gsap-fade">
+                <div class="section-num">02</div>
+                <h2 class="section-title text-metallic">Technical Stack</h2>
+            </div>
+
+            <div class="stack-matrix">
+                <!-- Architecture / Frontend -->
+                <div class="matrix-box gsap-fade">
+                    <i class="ph ph-browser matrix-icon"></i>
+                    <h3 class="matrix-title text-metallic">Client Frameworks</h3>
+                    <ul class="matrix-list">
+                        <li class="matrix-item">React / Next.js</li>
+                        <li class="matrix-item">TypeScript</li>
+                        <li class="matrix-item">WebGL Architecture</li>
+                        <li class="matrix-item">GSAP Animation Engine</li>
+                    </ul>
+                </div>
+
+                <!-- Systems / Backend -->
+                <div class="matrix-box gsap-fade">
+                    <i class="ph ph-cpu matrix-icon"></i>
+                    <h3 class="matrix-title text-metallic">Backend Infrastructure</h3>
+                    <ul class="matrix-list">
+                        <li class="matrix-item">Node.js Runtime</li>
+                        <li class="matrix-item">RESTful & WebSocket APIs</li>
+                        <li class="matrix-item">JWT Core Auth Services</li>
+                        <li class="matrix-item">Custom Rate-Limit Engines</li>
+                    </ul>
+                </div>
+
+                <!-- Database / Systems -->
+                <div class="matrix-box gsap-fade">
+                    <i class="ph ph-database matrix-icon"></i>
+                    <h3 class="matrix-title text-metallic">Data Orchestration</h3>
+                    <ul class="matrix-list">
+                        <li class="matrix-item">PostgreSQL</li>
+                        <li class="matrix-item">MongoDB Document Models</li>
+                        <li class="matrix-item">Relational Normalization</li>
+                        <li class="matrix-item">High-Throughput Caching</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- DATA PARAMETERS SECTION --- -->
+        <section id="parameters" class="section-padding">
+            <div class="section-header gsap-fade">
+                <div class="section-num">03</div>
+                <h2 class="section-title text-metallic">Personal Matrix</h2>
+            </div>
+
+            <div class="info-list gsap-fade">
+                <div class="info-item">
+                    <dt class="info-label"><i class="ph ph-map-pin"></i> Current Base</dt>
+                    <dd class="info-val">Ankola, Karnataka, India</dd>
+                </div>
+                <div class="info-item">
+                    <dt class="info-label"><i class="ph ph-graduation-cap"></i> Academic Track</dt>
+                    <dd class="info-val">B.Tech in Computer Science Engineering</dd>
+                </div>
+                <div class="info-item">
+                    <dt class="info-label"><i class="ph ph-globe"></i> Languages Spoken</dt>
+                    <dd class="info-val">English, Kannada, Konkani</dd>
+                </div>
+                <div class="info-item">
+                    <dt class="info-label"><i class="ph ph-terminal-window"></i> Preferred Editor</dt>
+                    <dd class="info-val">VS Code (Vim Keybindings)</dd>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- FOOTER / CONTACT --- -->
+        <footer id="contact">
+            <h2 class="contact-title text-metallic gsap-fade">Let's build something.</h2>
+            <div class="gsap-fade">
+                <a href="mailto:your.email@example.com" class="btn-large">
+                    Get in Touch <i class="ph ph-paper-plane-tilt"></i>
+                </a>
+            </div>
+
+            <div class="footer-bottom gsap-fade">
+                <p>© 2026 Mayur Naik. All rights reserved.</p>
+                <div class="socials">
+                    <a href="#" class="social-link"><i class="ph ph-github-logo"></i> GitHub</a>
+                    <a href="#" class="social-link"><i class="ph ph-linkedin-logo"></i> LinkedIn</a>
+                    <a href="#" class="social-link"><i class="ph ph-twitter-logo"></i> Twitter</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <script>
+        // Fluid Smooth Scroll 
+        const lenis = new Lenis({
+            lerp: 0.07, 
+            smoothWheel: true
+        });
+
+        // Sync Lenis with GSAP
+        gsap.registerPlugin(ScrollTrigger);
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+
+        // Immediate entry for Hero elements
+        gsap.to('.gsap-init', 
+            { opacity: 1, y: 0, duration: 1.2, stagger: 0.15, ease: "power4.out", delay: 0.1 }
+        );
+
+        // Standard Scroll Reveal for basic sections
+        gsap.utils.toArray('.gsap-fade').forEach(element => {
+            gsap.to(element, { 
+                scrollTrigger: { trigger: element, start: "top 85%", toggleActions: "play none none none" },
+                opacity: 1, y: 0, duration: 1.2, ease: "power4.out"
+            });
+        });
+    </script>
+</body>
+</html>

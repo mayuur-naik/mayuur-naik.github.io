@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Mayur Naik — Full Stack Developer</title>
-    <meta name="description" content="Portfolio of Mayur Naik, a full-stack developer based in Ankola, Karnataka.">
+    <title>Mayur Naik — Cloud Computing & Big Data</title>
+    <meta name="description" content="Portfolio of Mayur Naik, an upcoming Cloud Architect and Data Engineer studying at REVA University.">
     
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
@@ -18,7 +18,7 @@
         :root {
             --bg: #0b0c10; 
             --bg-secondary: #12141c;
-            --accent: #10b981; /* Subtle Emerald Accent */
+            --accent: #10b981; 
             --accent-glow: rgba(16, 185, 129, 0.15);
             --text-primary: #f4f4f5; 
             --text-secondary: #a1a1aa;
@@ -84,7 +84,7 @@
         
         .section-padding { padding: 140px 0; border-bottom: 1px solid var(--border-light); }
         .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 64px; }
-        .section-num { font-size: 0.85rem; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; font-mono: true; }
+        .section-num { font-size: 0.85rem; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; font-family: monospace; }
         .section-title { font-size: 2.25rem; font-weight: 600; letter-spacing: -0.03em; }
 
         /* --- HERO SECTION --- */
@@ -111,10 +111,10 @@
         .hero-title span { 
             font-weight: 400; display: block; margin-top: 8px;
             color: var(--text-secondary);
-            font-size: 0.7em;
+            font-size: 0.6em;
         }
         
-        .hero-desc { font-size: clamp(1.05rem, 1.8vw, 1.2rem); color: var(--text-secondary); max-width: 520px; font-weight: 400; line-height: 1.6; margin-bottom: 40px;}
+        .hero-desc { font-size: clamp(1.05rem, 1.8vw, 1.2rem); color: var(--text-secondary); max-width: 550px; font-weight: 400; line-height: 1.6; margin-bottom: 40px;}
 
         /* Buttons */
         .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap;}
@@ -144,7 +144,6 @@
             display: flex; justify-content: center; align-items: flex-end;
         }
         
-        /* Soft Ambient Glow behind photo */
         .hero-image-wrapper::before {
             content: ''; position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%);
             width: 320px; height: 320px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
@@ -155,7 +154,6 @@
             position: relative; z-index: 1;
             width: 100%; max-width: 420px; height: auto; max-height: 75vh;
             object-fit: contain; object-position: bottom;
-            /* Smooth fade at the torso cut-off */
             mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
         }
@@ -305,7 +303,7 @@
         <div class="nav-links">
             <a href="#about" class="nav-link">About</a>
             <a href="#work" class="nav-link">Work</a>
-            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#experience" class="nav-link">Education & Goals</a>
             <a href="#contact" class="nav-link">Contact</a>
         </div>
     </nav>
@@ -315,21 +313,21 @@
         <section class="hero">
             <div class="hero-content">
                 <div class="availability gsap-init">
-                    <div class="indicator"></div> Open for freelance & full-time roles
+                    <div class="indicator"></div> Future Cloud Architect & Data Engineer
                 </div>
                 <h1 class="hero-title text-metallic gsap-init">
                     Mayur Naik
-                    <span>Full-Stack & Cloud Developer</span>
+                    <span>Cloud Computing & Big Data Specialist.</span>
                 </h1>
                 <p class="hero-desc gsap-init">
-                    Building fast web applications, reliable backend APIs, and clean user interfaces. Based in Karnataka, India.
+                    I am currently pursuing my B.Sc. (Honours) in Computer Science at REVA University, learning to design cloud-based architectures, configure virtual machines, and deploy scalable cloud applications using AWS, Azure, and OpenStack.
                 </p>
                 <div class="hero-actions gsap-init">
                     <a href="#work" class="btn-primary">
-                        View Projects <i class="ph ph-arrow-right"></i>
+                        View Technical Skills <i class="ph ph-arrow-right"></i>
                     </a>
-                    <a href="https://github.com/yourusername" target="_blank" class="btn-outline">
-                        <i class="ph ph-github-logo"></i> GitHub
+                    <a href="#experience" class="btn-outline">
+                        <i class="ph ph-graduation-cap"></i> View Academics
                     </a>
                 </div>
             </div>
@@ -348,30 +346,30 @@
             <div class="about-grid">
                 <div class="gsap-fade">
                     <p class="about-text">
-                        I’m a Computer Science student and full-stack developer who enjoys bringing ideas to life through code.
+                        My academic focus is strictly on the intersection of Cloud Computing and Big Data Analytics, preparing for roles like Cloud Architect and Data Engineer.
                     </p>
                     <p class="about-sub">
-                        I focus on crafting end-to-end applications with clean TypeScript, efficient APIs, and intuitive designs. Whether I'm configuring cloud infrastructure or tweaking UI interactions, my goal is always to build software that is fast, accessible, and easy to maintain.
+                        Trained by industry experts at REVA University, my foundation is built on practical operating systems knowledge (Linux Foundation), C programming, and mastering cloud platforms like Amazon AWS, Microsoft Azure, and Open Stack. I am driven by the challenge of configuring robust private, public, and hybrid clouds to solve complex business problems.
                     </p>
                 </div>
                 
                 <div class="gsap-fade">
                     <dl class="info-list">
                         <div class="info-item">
-                            <dt class="info-label"><i class="ph ph-map-pin"></i> Location</dt>
-                            <dd class="info-val">Ankola, Karnataka</dd>
-                        </div>
-                        <div class="info-item">
                             <dt class="info-label"><i class="ph ph-graduation-cap"></i> Education</dt>
-                            <dd class="info-val">B.Tech in Computer Science</dd>
+                            <dd class="info-val">B.Sc. (Hons) in Computer Science<br><span style="font-size: 0.8em; color: var(--text-secondary);">REVA University (6 Semesters)</span></dd>
                         </div>
                         <div class="info-item">
-                            <dt class="info-label"><i class="ph ph-code"></i> Core Tech</dt>
-                            <dd class="info-val">React, Next.js, Node.js, TypeScript</dd>
+                            <dt class="info-label"><i class="ph ph-cloud"></i> Cloud Platforms</dt>
+                            <dd class="info-val">Amazon AWS, Microsoft Azure, OpenStack</dd>
                         </div>
                         <div class="info-item">
-                            <dt class="info-label"><i class="ph ph-database"></i> Databases & Cloud</dt>
-                            <dd class="info-val">PostgreSQL, MongoDB, AWS</dd>
+                            <dt class="info-label"><i class="ph ph-code"></i> Core Foundations</dt>
+                            <dd class="info-val">C Programming, Linux OS, Virtualization</dd>
+                        </div>
+                        <div class="info-item">
+                            <dt class="info-label"><i class="ph ph-chart-line-up"></i> Data Expertise</dt>
+                            <dd class="info-val">Big Data Analytics & Data Mining Tools</dd>
                         </div>
                     </dl>
                 </div>
@@ -381,44 +379,41 @@
         <section id="work" class="section-padding">
             <div class="section-header gsap-fade">
                 <span class="section-num">02 //</span>
-                <h2 class="section-title text-metallic">Selected Work</h2>
+                <h2 class="section-title text-metallic">Hands-On Training & Projects</h2>
             </div>
 
             <div class="project-list">
                 <div class="project-item gsap-fade">
                     <div class="project-visual">
-                        <!-- Replace src with a screenshot/gif of your actual project -->
-                        <img src="https://images.unsplash.com/photo-1556742049-0a670f4a4591?q=80&w=1000&auto=format&fit=crop" alt="E-Commerce Platform Preview">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop" alt="Cloud Architecture">
                     </div>
                     <div class="project-content">
                         <div class="project-meta">
-                            <span class="project-tag">Next.js 14</span>
-                            <span class="project-tag">Stripe API</span>
-                            <span class="project-tag">Tailwind</span>
+                            <span class="project-tag">AWS / Azure</span>
+                            <span class="project-tag">Virtualization</span>
+                            <span class="project-tag">PSO-3</span>
                         </div>
-                        <h3 class="project-title text-metallic">Storefront Architecture</h3>
+                        <h3 class="project-title text-metallic">Scalable Cloud Architecture</h3>
                         <p class="project-desc">
-                            A modern e-commerce application featuring server-side rendering, instant search, dynamic cart management, and seamless Stripe checkout integration.
+                            Applying concepts of virtualization to design and develop highly scalable applications. This includes configuring virtual machines, managing cloud storage, and differentiating between private, public, and hybrid cloud structures.
                         </p>
-                        <a href="#" class="project-link">View Live Demo <i class="ph ph-arrow-up-right"></i></a>
                     </div>
                 </div>
 
                 <div class="project-item gsap-fade">
                     <div class="project-visual">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Realtime Analytics Dashboard">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Data Analytics">
                     </div>
                     <div class="project-content">
                         <div class="project-meta">
-                            <span class="project-tag">Node.js</span>
-                            <span class="project-tag">WebSockets</span>
-                            <span class="project-tag">PostgreSQL</span>
+                            <span class="project-tag">Big Data</span>
+                            <span class="project-tag">Data Mining</span>
+                            <span class="project-tag">C / Linux</span>
                         </div>
-                        <h3 class="project-title text-metallic">Real-Time Event Engine</h3>
+                        <h3 class="project-title text-metallic">Cloud Data Analytics</h3>
                         <p class="project-desc">
-                            A high-throughput streaming service designed to ingest and render dynamic data metrics with minimal latency via WebSocket connections.
+                            Utilizing various data mining tools and algorithms to analyze data in the cloud. Combining Linux Foundation principles and C programming to process complex datasets and build software solutions for real-life business problems.
                         </p>
-                        <a href="#" class="project-link">View GitHub Repo <i class="ph ph-arrow-up-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -427,7 +422,7 @@
         <section id="experience" class="section-padding">
             <div class="section-header gsap-fade">
                 <span class="section-num">03 //</span>
-                <h2 class="section-title text-metallic">Experience</h2>
+                <h2 class="section-title text-metallic">Academics & Career Objectives</h2>
             </div>
 
             <div class="timeline">
@@ -438,11 +433,11 @@
                 <div class="timeline-item">
                     <div class="timeline-node"></div>
                     <div class="timeline-content">
-                        <span class="duration">2023 — Present</span>
-                        <h3 class="role text-metallic">Freelance Software Developer</h3>
-                        <p class="company"><i class="ph ph-buildings"></i> Self-Employed</p>
+                        <span class="duration">Current Study (3 Years / 6 Semesters)</span>
+                        <h3 class="role text-metallic">B.Sc. (Hons) Computer Science</h3>
+                        <p class="company"><i class="ph ph-buildings"></i> REVA University</p>
                         <p class="timeline-desc">
-                            Building custom web solutions for individual clients. Handling end-to-end development, from designing UI wireframes to deploying backend APIs and managing server setup.
+                            Specializing in Cloud Computing and Big Data. Rigorous coursework covering Discrete Mathematical Structures, C Programming, Linux Foundation, and Computer Organization & Architecture.
                         </p>
                     </div>
                 </div>
@@ -450,11 +445,11 @@
                 <div class="timeline-item">
                     <div class="timeline-node"></div>
                     <div class="timeline-content">
-                        <span class="duration">2022 — 2023</span>
-                        <h3 class="role text-metallic">Open Source Contributor</h3>
-                        <p class="company"><i class="ph ph-git-merge"></i> Community Development</p>
+                        <span class="duration">Programme Educational Objectives (PEOs)</span>
+                        <h3 class="role text-metallic">Future Industry Roles</h3>
+                        <p class="company"><i class="ph ph-target"></i> Cloud Engineer & Data Analyst</p>
                         <p class="timeline-desc">
-                            Contributing to frontend tools and libraries. Focused on fixing component bugs, enhancing accessibility features, and improving project documentation.
+                            Training to become a Cloud Administrator, Cloud Automation Engineer, and Solution Architect. My goal is to operate commercial software tools, develop algorithms, and assist ICT professionals in setting up domain-specific cloud infrastructure.
                         </p>
                     </div>
                 </div>
@@ -462,7 +457,7 @@
         </section>
 
         <footer id="contact">
-            <h2 class="contact-title text-metallic gsap-fade">Let's build together.</h2>
+            <h2 class="contact-title text-metallic gsap-fade">Ready to collaborate.</h2>
             <div class="gsap-fade">
                 <a href="mailto:your.email@example.com" class="btn-large">
                     Get in Touch <i class="ph ph-paper-plane-tilt"></i>
@@ -486,7 +481,6 @@
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 
     <script>
-        // Smooth Scroll
         const lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
 
         gsap.registerPlugin(ScrollTrigger);
@@ -494,10 +488,8 @@
         gsap.ticker.add((time) => { lenis.raf(time * 1000); });
         gsap.ticker.lagSmoothing(0);
 
-        // Entry animation for Hero
         gsap.to('.gsap-init', { opacity: 1, y: 0, duration: 1, stagger: 0.12, ease: "power3.out", delay: 0.1 });
 
-        // Scroll Reveal
         gsap.utils.toArray('.gsap-fade').forEach(element => {
             gsap.to(element, { 
                 scrollTrigger: { trigger: element, start: "top 88%", toggleActions: "play none none none" },
@@ -505,25 +497,13 @@
             });
         });
 
-        // Timeline Progress Bar
         gsap.to(".timeline-progress", {
-            scrollTrigger: {
-                trigger: ".timeline",
-                start: "top 50%",    
-                end: "bottom 50%",   
-                scrub: true            
-            },
-            scaleY: 1,
-            ease: "none"
+            scrollTrigger: { trigger: ".timeline", start: "top 50%", end: "bottom 50%", scrub: true },
+            scaleY: 1, ease: "none"
         });
 
-        // Timeline Item Active Highlights
         gsap.utils.toArray('.timeline-item').forEach(item => {
-            ScrollTrigger.create({
-                trigger: item,
-                start: "top 50%",    
-                toggleClass: "is-active"
-            });
+            ScrollTrigger.create({ trigger: item, start: "top 50%", toggleClass: "is-active" });
         });
     </script>
 </body>

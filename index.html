@@ -52,6 +52,9 @@
             -webkit-text-fill-color: transparent;
             color: transparent;
             line-height: 1.1;
+            /* FIX: Added padding to prevent the browser from clipping the text edges */
+            padding-right: 0.05em;
+            padding-bottom: 0.05em; 
         }
 
         /* --- SUBTLE BACKGROUND AMBIANCE --- */
@@ -333,7 +336,7 @@
             </div>
 
             <div class="hero-image-wrapper gsap-init">
-                <img src="/assets/images/yourphoto.png" alt="Mayur Naik" class="profile-img" width="450" height="600" loading="eager">
+                <img src="/assets/images/mayur-photo.png" alt="Mayur Naik" class="profile-img" width="450" height="600" loading="eager">
             </div>
         </section>
 
@@ -357,11 +360,11 @@
                     <dl class="info-list">
                         <div class="info-item">
                             <dt class="info-label"><i class="ph ph-map-pin"></i> Location</dt>
-                            <dd class="info-val">Bangalore, Karnataka</dd>
+                            <dd class="info-val">Ankola, Karnataka</dd>
                         </div>
                         <div class="info-item">
                             <dt class="info-label"><i class="ph ph-graduation-cap"></i> Education</dt>
-                            <dd class="info-val">B.Sc CS - Cloud Computing & Big Data<br><span style="font-size: 0.8em; color: var(--text-secondary);">REVA University</span></dd>
+                            <dd class="info-val">B.Sc. (Hons) CS - Cloud & Big Data<br><span style="font-size: 0.8em; color: var(--text-secondary);">REVA University</span></dd>
                         </div>
                         <div class="info-item">
                             <dt class="info-label"><i class="ph ph-cloud"></i> Core Stack</dt>
@@ -422,7 +425,7 @@
                     </div>
                 </div>
 
-                <!-- Project 3 (New) -->
+                <!-- Project 3 -->
                 <div class="project-item gsap-fade">
                     <div class="project-visual">
                         <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop" alt="Server Infrastructure">
@@ -441,7 +444,7 @@
                     </div>
                 </div>
 
-                <!-- Project 4 (New) -->
+                <!-- Project 4 -->
                 <div class="project-item gsap-fade">
                     <div class="project-visual">
                         <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1000&auto=format&fit=crop" alt="Data Visualization">
@@ -474,7 +477,6 @@
                     <div class="timeline-progress"></div>
                 </div>
 
-                <!-- Experience 1 (New) -->
                 <div class="timeline-item">
                     <div class="timeline-node"></div>
                     <div class="timeline-content">
@@ -487,7 +489,6 @@
                     </div>
                 </div>
 
-                <!-- Experience 2 (Original) -->
                 <div class="timeline-item">
                     <div class="timeline-node"></div>
                     <div class="timeline-content">
@@ -500,7 +501,6 @@
                     </div>
                 </div>
 
-                <!-- Experience 3 (Original) -->
                 <div class="timeline-item">
                     <div class="timeline-node"></div>
                     <div class="timeline-content">
@@ -513,7 +513,6 @@
                     </div>
                 </div>
 
-                <!-- Experience 4 (New) -->
                 <div class="timeline-item">
                     <div class="timeline-node"></div>
                     <div class="timeline-content">

@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <title>Mayur Naik — Cloud & Big Data Engineer</title>
     <meta name="description" content="Portfolio of Mayur Naik, a Cloud Computing and Big Data specialist based in Bangalore, Karnataka.">
-
+    
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    
     <style>
         /* --- REFINED DESIGN SYSTEM --- */
         :root {
@@ -82,7 +82,7 @@
         /* --- LAYOUT UTILITIES --- */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 48px; } 
         .gsap-init, .gsap-fade { opacity: 0; transform: translateY(24px); }
-
+        
         .section-padding { padding: 140px 0; border-bottom: 1px solid var(--border-light); }
         .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 64px; }
         .section-num { font-size: 0.85rem; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; font-family: monospace; }
@@ -98,7 +98,7 @@
             padding-top: 80px; 
             border-bottom: 1px solid var(--border-light); 
         }
-
+        
         .hero-content { display: flex; flex-direction: column; align-items: flex-start; z-index: 2; }
 
         .availability {
@@ -108,7 +108,7 @@
         }
         .indicator { width: 8px; height: 8px; background-color: var(--accent); border-radius: 50%; box-shadow: 0 0 12px var(--accent); }
 
-        /* FIX: Shifted spacing from margin to padding to extend the background-clip area downwards */
+        /* Padding bottom prevents descender letter clipping ('g') */
         .hero-title { 
             font-size: clamp(2.8rem, 6vw, 5.5rem); 
             font-weight: 700; 
@@ -117,7 +117,7 @@
             padding-bottom: 24px; 
             margin-bottom: 0px; 
         }
-
+        
         .hero-title span { 
             font-weight: 400; 
             display: block; 
@@ -125,7 +125,7 @@
             color: var(--text-secondary);
             font-size: 0.7em;
         }
-
+        
         .hero-desc { font-size: clamp(1.05rem, 1.8vw, 1.2rem); color: var(--text-secondary); max-width: 520px; font-weight: 400; line-height: 1.6; margin-bottom: 40px;}
 
         /* Buttons */
@@ -134,19 +134,19 @@
             display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; border-radius: 100px;
             background: #ffffff; color: var(--bg); font-size: 0.95rem; font-weight: 600; text-decoration: none;
             transition: all 0.3s var(--ease-out);
-
+            
             i { transition: transform 0.3s var(--ease-out); }
             &:hover { 
                 transform: translateY(-2px); background: #e4e4e7; 
                 i { transform: translateX(4px); }
             }
         }
-
+        
         .btn-outline {
             display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; border-radius: 100px;
             background: transparent; color: var(--text-primary); font-size: 0.95rem; font-weight: 500; text-decoration: none;
             border: 1px solid var(--border-strong); transition: all 0.3s var(--ease-out);
-
+            
             &:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.3); }
         }
 
@@ -155,7 +155,7 @@
             position: relative; width: 100%; height: 100%;
             display: flex; justify-content: center; align-items: flex-end;
         }
-
+        
         .hero-image-wrapper::before {
             content: ''; position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%);
             width: 320px; height: 320px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
@@ -174,7 +174,7 @@
         .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; }
         .about-text { font-size: 1.35rem; line-height: 1.6; font-weight: 400; color: var(--text-primary); margin-bottom: 24px;}
         .about-sub { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7; }
-
+        
         .info-list { margin-top: 32px; border-top: 1px solid var(--border-light); }
         .info-item { 
             display: flex; justify-content: space-between; align-items: center; gap: 16px; 
@@ -196,7 +196,7 @@
             border: 1px solid var(--border-light);
             overflow: hidden; position: relative; 
             transition: all 0.4s var(--ease-out);
-
+            
             img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease-out); }
             &:hover { 
                 border-color: var(--border-strong);
@@ -204,17 +204,17 @@
                 img { transform: scale(1.03); }
             }
         }
-
+        
         .project-meta { margin-bottom: 16px; display: flex; gap: 8px; flex-wrap: wrap; }
         .project-tag { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.02em; color: var(--text-secondary); padding: 4px 12px; border: 1px solid var(--border-light); border-radius: 100px; background: rgba(255, 255, 255, 0.02); }
-
+        
         .project-title { font-size: 2rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 12px; }
         .project-desc { font-size: 1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px; font-weight: 400; }
-
+        
         .project-link { 
             display: inline-flex; align-items: center; gap: 6px; color: var(--text-primary); font-weight: 500; font-size: 0.95rem; text-decoration: none; 
             border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: all 0.3s var(--ease-out);
-
+            
             i { transition: transform 0.3s var(--ease-out); }
             &:hover { 
                 border-color: var(--accent); color: var(--accent);
@@ -224,7 +224,7 @@
 
         /* --- TIMELINE ENGINE --- */
         .timeline { position: relative; display: flex; flex-direction: column; }
-
+        
         .timeline-track {
             position: absolute; left: 5px; top: 12px; bottom: 0; width: 2px;
             background: var(--border-light); border-radius: 100px; z-index: 1;
@@ -236,16 +236,16 @@
             transform-origin: top; transform: scaleY(0); 
             border-radius: 100px;
         }
-
+        
         .timeline-item { position: relative; padding-left: 40px; padding-bottom: 56px; }
         .timeline-item:last-child { padding-bottom: 0; }
-
+        
         .timeline-node { 
             position: absolute; left: 0; top: 6px; 
             width: 12px; height: 12px; border-radius: 50%; background: var(--bg); 
             border: 2px solid var(--border-strong); transition: all 0.4s var(--ease-out); z-index: 2;
         }
-
+        
         .timeline-content { opacity: 0.5; transform: translateX(-8px); transition: all 0.5s var(--ease-out); }
 
         /* Active State */
@@ -254,9 +254,9 @@
             box-shadow: 0 0 12px var(--accent); 
             transform: scale(1.2);
         }
-
+        
         .timeline-item.is-active .timeline-content { opacity: 1; transform: translateX(0); }
-
+        
         .role { font-size: 1.35rem; font-weight: 600; margin-bottom: 4px; }
         .company { font-size: 1rem; color: var(--text-secondary); margin-bottom: 12px; font-weight: 400; display: flex; align-items: center; gap: 6px;}
         .duration { font-size: 0.8rem; color: var(--accent); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 16px; display: block;}
@@ -265,11 +265,11 @@
         /* --- FOOTER / CONTACT --- */
         footer { padding: 100px 0 60px; text-align: center; }
         .contact-title { font-size: clamp(2.2rem, 5vw, 4.5rem); font-weight: 600; letter-spacing: -0.03em; margin-bottom: 36px; }
-
+        
         .btn-large {
             display: inline-flex; align-items: center; gap: 10px; background: #ffffff; color: var(--bg);
             padding: 18px 40px; border-radius: 100px; font-size: 1rem; font-weight: 600; text-decoration: none; transition: all 0.3s var(--ease-out);
-
+            
             i { transition: transform 0.3s var(--ease-out); }
             &:hover { transform: translateY(-3px); background: #e4e4e7; i { transform: translateX(4px); } }
         }
@@ -285,11 +285,11 @@
         @media (max-width: 900px) {
             nav { padding: 18px 24px; }
             .nav-links { display: none; }
-
+            
             .container { padding: 0 24px; }
             .section-padding { padding: 80px 0; }
             .section-header { margin-bottom: 40px; }
-
+            
             .hero { grid-template-columns: 1fr; padding-top: 120px; min-height: auto; gap: 32px; }
             .hero-image-wrapper { order: 1; max-height: 45vh; }
             .hero-actions { width: 100%; flex-direction: column; align-items: stretch; }
@@ -299,9 +299,9 @@
             .project-item, .project-item:nth-child(even) { grid-template-columns: 1fr; gap: 24px; }
             .project-item:nth-child(even) .project-content { order: 0; }
             .project-list { gap: 64px; }
-
+            
             .timeline-item { padding-left: 28px; padding-bottom: 40px; }
-
+            
             .footer-bottom { flex-direction: column; gap: 20px; }
         }
     </style>
@@ -321,7 +321,7 @@
     </nav>
 
     <main class="container">
-
+        
         <section class="hero">
             <div class="hero-content">
                 <div class="availability gsap-init">
@@ -349,12 +349,13 @@
             </div>
         </section>
 
+        <!-- 01 ABOUT SECTION -->
         <section id="about" class="section-padding">
             <div class="section-header gsap-fade">
                 <span class="section-num">01 //</span>
                 <h2 class="section-title text-metallic">About Me</h2>
             </div>
-
+            
             <div class="about-grid">
                 <div class="gsap-fade">
                     <p class="about-text">
@@ -364,7 +365,7 @@
                         My focus is on designing scalable cloud architectures, configuring virtual machines across platforms like AWS and Azure, and analyzing large datasets. I love solving real-world challenges by building resilient, cloud-native applications and developing efficient software solutions.
                     </p>
                 </div>
-
+                
                 <div class="gsap-fade">
                     <dl class="info-list">
                         <div class="info-item">
@@ -373,7 +374,7 @@
                         </div>
                         <div class="info-item">
                             <dt class="info-label"><i class="ph ph-graduation-cap"></i> Education</dt>
-                            <dd class="info-val">B.Sc CS - Cloud & Big Data<br><span style="font-size: 0.8em; color: var(--text-secondary);">REVA University</span></dd>
+                            <dd class="info-val">B.Sc CS - Cloud Computing & Big Data<br><span style="font-size: 0.8em; color: var(--text-secondary);">REVA University</span></dd>
                         </div>
                         <div class="info-item">
                             <dt class="info-label"><i class="ph ph-cloud"></i> Core Stack</dt>
@@ -388,6 +389,7 @@
             </div>
         </section>
 
+        <!-- 02 SELECTED WORK (FIRST) -->
         <section id="work" class="section-padding">
             <div class="section-header gsap-fade">
                 <span class="section-num">02 //</span>
@@ -395,7 +397,7 @@
             </div>
 
             <div class="project-list">
-
+                
                 <!-- Project 1 -->
                 <div class="project-item gsap-fade">
                     <div class="project-visual">
@@ -475,6 +477,7 @@
             </div>
         </section>
 
+        <!-- 03 EXPERIENCE SECTION (SECOND) -->
         <section id="experience" class="section-padding">
             <div class="section-header gsap-fade">
                 <span class="section-num">03 //</span>
@@ -537,10 +540,10 @@
             </div>
         </section>
 
+        <!-- FOOTER / CONTACT -->
         <footer id="contact">
             <h2 class="contact-title text-metallic gsap-fade">Let's build together.</h2>
             <div class="gsap-fade">
-                <a href="Mayurnaik360@gmail.com" class="btn-large">
                 <a href="mailto:Mayurnaik360@gmail.com" class="btn-large">
                     Get in Touch <i class="ph ph-paper-plane-tilt"></i>
                 </a>

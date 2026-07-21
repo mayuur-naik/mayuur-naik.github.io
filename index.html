@@ -51,9 +51,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             color: transparent;
-            line-height: 1.2; /* FIX: Increased line-height slightly */
-            padding-right: 0.1em;
-            padding-bottom: 0.1em; 
+            line-height: 1.2;
+            padding-right: 0.1em; /* Protects italicized/right-leaning letters */
         }
 
         /* --- SUBTLE BACKGROUND AMBIANCE --- */
@@ -109,13 +108,22 @@
         }
         .indicator { width: 8px; height: 8px; background-color: var(--accent); border-radius: 50%; box-shadow: 0 0 12px var(--accent); }
 
-        .hero-title { font-size: clamp(2.8rem, 6vw, 5.5rem); font-weight: 700; line-height: 1; letter-spacing: -0.04em; margin-bottom: 24px; }
+        /* FIX: Shifted spacing from margin to padding to extend the background-clip area downwards */
+        .hero-title { 
+            font-size: clamp(2.8rem, 6vw, 5.5rem); 
+            font-weight: 700; 
+            line-height: 1.2; 
+            letter-spacing: -0.04em; 
+            padding-bottom: 24px; 
+            margin-bottom: 0px; 
+        }
         
         .hero-title span { 
-            font-weight: 400; display: block; margin-top: 8px;
+            font-weight: 400; 
+            display: block; 
+            margin-top: 8px;
             color: var(--text-secondary);
             font-size: 0.7em;
-            padding-bottom: 0.15em; /* FIX: Protects descenders like 'g' from being trimmed */
         }
         
         .hero-desc { font-size: clamp(1.05rem, 1.8vw, 1.2rem); color: var(--text-secondary); max-width: 520px; font-weight: 400; line-height: 1.6; margin-bottom: 40px;}

@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Mayur Naik — Cloud engineer</title>
-    <meta name="description" content="Portfolio of Mayur Naik, a Cloud engineer based in Ankola, Karnataka.">
+    <title>Mayur Naik — Full Stack Developer</title>
+    <meta name="description" content="Portfolio of Mayur Naik, a full-stack developer based in Ankola, Karnataka.">
     
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- PROFESSIONAL EDITORIAL DESIGN SYSTEM --- */
+        /* --- REFINED DESIGN SYSTEM --- */
         :root {
-            --bg: #09090b; 
-            --bg-secondary: #18181b;
-            --text-primary: #e4e4e7; 
-            --text-secondary: #8f8f97;
-            --border-light: rgba(255, 255, 255, 0.06);
-            --border-strong: rgba(255, 255, 255, 0.12);
-            --curve: 24px; 
+            --bg: #0b0c10; 
+            --bg-secondary: #12141c;
+            --accent: #10b981; /* Subtle Emerald Accent */
+            --accent-glow: rgba(16, 185, 129, 0.15);
+            --text-primary: #f4f4f5; 
+            --text-secondary: #a1a1aa;
+            --border-light: rgba(255, 255, 255, 0.08);
+            --border-strong: rgba(255, 255, 255, 0.16);
+            --curve: 16px; 
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -34,47 +36,45 @@
         .lenis.lenis-stopped { overflow: hidden; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--bg);
             color: var(--text-primary);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            line-height: 1.5;
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* --- METALLIC TEXT UTILITY --- */
+        /* --- GRADIENT TEXT UTILITY --- */
         .text-metallic {
-            background: linear-gradient(135deg, #ffffff 20%, #a1a1aa 100%);
+            background: linear-gradient(135deg, #ffffff 30%, #d4d4d8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             color: transparent;
-            padding-bottom: 0.1em;
-            margin-bottom: -0.1em;
-            line-height: 1.2;
+            line-height: 1.1;
         }
 
-        /* --- ENGINEERING DOT GRID BACKGROUND --- */
+        /* --- SUBTLE BACKGROUND AMBIANCE --- */
         .bg-grid {
             position: fixed; inset: 0; z-index: -2; pointer-events: none;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-            background-size: 32px 32px;
-            mask-image: radial-gradient(ellipse at center, black 20%, transparent 80%);
-            -webkit-mask-image: radial-gradient(ellipse at top, black 20%, transparent 80%);
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 36px 36px;
+            mask-image: radial-gradient(ellipse at top, black 30%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse at top, black 30%, transparent 80%);
         }
 
         /* --- TOP NAVIGATION --- */
         nav {
             position: fixed; top: 0; width: 100%; z-index: 100;
-            padding: 24px 48px; display: flex; justify-content: space-between; align-items: center;
-            background: rgba(9, 9, 11, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            padding: 20px 48px; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(11, 12, 16, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-light);
         }
         .nav-brand { font-size: 1rem; font-weight: 600; letter-spacing: -0.02em; color: var(--text-primary); text-decoration: none; }
         .nav-links { display: flex; gap: 32px; }
         .nav-link { 
             color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; 
-            transition: color 0.4s var(--ease-out); 
+            transition: color 0.3s var(--ease-out); 
             &:hover { color: #ffffff; }
         }
 
@@ -82,10 +82,10 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 0 48px; } 
         .gsap-init, .gsap-fade { opacity: 0; transform: translateY(24px); }
         
-        .section-padding { padding: 160px 0; border-bottom: 1px solid var(--border-light); }
-        .section-header { display: grid; grid-template-columns: 1fr 3fr; margin-bottom: 80px; align-items: baseline;}
-        .section-num { font-size: 0.85rem; font-weight: 500; color: var(--text-secondary); letter-spacing: 0.05em; }
-        .section-title { font-size: 2.5rem; font-weight: 400; letter-spacing: -0.03em; }
+        .section-padding { padding: 140px 0; border-bottom: 1px solid var(--border-light); }
+        .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 64px; }
+        .section-num { font-size: 0.85rem; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; font-mono: true; }
+        .section-title { font-size: 2.25rem; font-weight: 600; letter-spacing: -0.03em; }
 
         /* --- HERO SECTION --- */
         .hero { 
@@ -102,40 +102,38 @@
 
         .availability {
             display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);
-            margin-bottom: 40px; padding: 8px 16px; border: 1px solid var(--border-light); border-radius: 100px; width: fit-content;
+            margin-bottom: 32px; padding: 6px 16px; border: 1px solid var(--border-light); border-radius: 100px; width: fit-content;
+            background: rgba(255, 255, 255, 0.02);
         }
-        .indicator { width: 8px; height: 8px; background-color: #10b981; border-radius: 50%; box-shadow: 0 0 12px rgba(16, 185, 129, 0.6); }
+        .indicator { width: 8px; height: 8px; background-color: var(--accent); border-radius: 50%; box-shadow: 0 0 12px var(--accent); }
 
-        .hero-title { font-size: clamp(2.8rem, 8vw, 6.5rem); font-weight: 600; line-height: 0.95; letter-spacing: -0.04em; margin-bottom: 32px; }
+        .hero-title { font-size: clamp(2.8rem, 6vw, 5.5rem); font-weight: 700; line-height: 1; letter-spacing: -0.04em; margin-bottom: 24px; }
         .hero-title span { 
             font-weight: 400; display: block; margin-top: 8px;
-            background: linear-gradient(90deg, #a1a1aa 0%, #52525b 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
-            padding-bottom: 0.1em;
+            color: var(--text-secondary);
+            font-size: 0.7em;
         }
         
-        .hero-desc { font-size: clamp(1.1rem, 2vw, 1.25rem); color: var(--text-secondary); max-width: 500px; font-weight: 300; line-height: 1.6; margin-bottom: 40px;}
+        .hero-desc { font-size: clamp(1.05rem, 1.8vw, 1.2rem); color: var(--text-secondary); max-width: 520px; font-weight: 400; line-height: 1.6; margin-bottom: 40px;}
 
         /* Buttons */
         .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap;}
         .btn-primary {
-            display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 32px; border-radius: 100px;
-            background: #ffffff; color: var(--bg); font-size: 1rem; font-weight: 600; text-decoration: none;
-            transition: all 0.4s var(--ease-out);
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; border-radius: 100px;
+            background: #ffffff; color: var(--bg); font-size: 0.95rem; font-weight: 600; text-decoration: none;
+            transition: all 0.3s var(--ease-out);
             
-            i { transition: transform 0.4s var(--ease-out); }
+            i { transition: transform 0.3s var(--ease-out); }
             &:hover { 
-                transform: translateY(-2px); background: #d4d4d8; 
+                transform: translateY(-2px); background: #e4e4e7; 
                 i { transform: translateX(4px); }
             }
         }
         
         .btn-outline {
-            display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 32px; border-radius: 100px;
-            background: transparent; color: var(--text-primary); font-size: 1rem; font-weight: 500; text-decoration: none;
-            border: 1px solid var(--border-strong); transition: all 0.4s var(--ease-out);
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; border-radius: 100px;
+            background: transparent; color: var(--text-primary); font-size: 0.95rem; font-weight: 500; text-decoration: none;
+            border: 1px solid var(--border-strong); transition: all 0.3s var(--ease-out);
             
             &:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.3); }
         }
@@ -144,169 +142,157 @@
         .hero-image-wrapper {
             position: relative; width: 100%; height: 100%;
             display: flex; justify-content: center; align-items: flex-end;
-            padding-top: 40px;
         }
         
+        /* Soft Ambient Glow behind photo */
         .hero-image-wrapper::before {
-            content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
-            filter: blur(40px); z-index: 0; pointer-events: none;
+            content: ''; position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%);
+            width: 320px; height: 320px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            filter: blur(50px); z-index: 0; pointer-events: none;
         }
 
         .profile-img {
             position: relative; z-index: 1;
-            width: 100%; max-width: 450px; height: auto; max-height: 80vh;
+            width: 100%; max-width: 420px; height: auto; max-height: 75vh;
             object-fit: contain; object-position: bottom;
-            mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
-            filter: drop-shadow(0 0 40px rgba(255,255,255,0.05));
+            /* Smooth fade at the torso cut-off */
+            mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
         }
 
         /* --- ABOUT SECTION --- */
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
-        .about-text { font-size: 1.5rem; line-height: 1.6; font-weight: 300; color: var(--text-primary); margin-bottom: 40px;}
-        .about-sub { color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; }
+        .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; }
+        .about-text { font-size: 1.35rem; line-height: 1.6; font-weight: 400; color: var(--text-primary); margin-bottom: 24px;}
+        .about-sub { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7; }
         
-        /* Fixed info list for strict mobile alignment */
-        .info-list { margin-top: 48px; border-top: 1px solid var(--border-light); }
+        .info-list { margin-top: 32px; border-top: 1px solid var(--border-light); }
         .info-item { 
-            display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; 
-            padding: 24px 0; border-bottom: 1px solid var(--border-light); font-size: 1rem; 
+            display: flex; justify-content: space-between; align-items: center; gap: 16px; 
+            padding: 20px 0; border-bottom: 1px solid var(--border-light); font-size: 0.95rem; 
         }
-        .info-label { display: flex; align-items: center; gap: 12px; color: var(--text-secondary); flex-shrink: 0; }
-        .info-label i { font-size: 1.2rem; }
+        .info-label { display: flex; align-items: center; gap: 10px; color: var(--text-secondary); }
+        .info-label i { font-size: 1.1rem; color: var(--accent); }
         .info-val { color: var(--text-primary); font-weight: 500; text-align: right; }
 
         /* --- SELECTED WORK (PROJECTS) --- */
-        .project-list { display: flex; flex-direction: column; gap: 120px; }
-        .project-item { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center; }
+        .project-list { display: flex; flex-direction: column; gap: 100px; }
+        .project-item { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
         .project-item:nth-child(even) { grid-template-columns: 1fr 1.2fr; }
         .project-item:nth-child(even) .project-content { order: -1; } 
 
         .project-visual { 
-            background: var(--bg-secondary); aspect-ratio: 4/3; 
+            background: var(--bg-secondary); aspect-ratio: 16/10; 
             border-radius: var(--curve);
             border: 1px solid var(--border-light);
             overflow: hidden; position: relative; 
-            transition: all 0.5s var(--ease-out); display: flex; align-items: center; justify-content: center;
-            color: var(--border-strong);
+            transition: all 0.4s var(--ease-out);
             
-            svg { width: 35%; height: auto; transition: transform 0.6s var(--ease-out); }
+            img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease-out); }
             &:hover { 
-                border-color: rgba(255,255,255,0.25);
-                box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-                svg { transform: scale(1.05); color: var(--text-secondary); }
+                border-color: var(--border-strong);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+                img { transform: scale(1.03); }
             }
         }
         
-        .project-meta { margin-bottom: 24px; display: flex; gap: 12px; }
-        .project-tag { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-secondary); padding: 6px 14px; border: 1px solid var(--border-light); border-radius: 100px; }
+        .project-meta { margin-bottom: 16px; display: flex; gap: 8px; flex-wrap: wrap; }
+        .project-tag { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.02em; color: var(--text-secondary); padding: 4px 12px; border: 1px solid var(--border-light); border-radius: 100px; background: rgba(255, 255, 255, 0.02); }
         
-        .project-title { font-size: 2.5rem; font-weight: 500; letter-spacing: -0.03em; margin-bottom: 16px; }
-        .project-desc { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 32px; font-weight: 300; }
+        .project-title { font-size: 2rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 12px; }
+        .project-desc { font-size: 1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px; font-weight: 400; }
         
         .project-link { 
-            display: inline-flex; align-items: center; gap: 8px; color: var(--text-primary); font-weight: 500; font-size: 0.95rem; text-decoration: none; 
-            border-bottom: 1px solid var(--border-strong); padding-bottom: 4px; transition: all 0.4s var(--ease-out);
+            display: inline-flex; align-items: center; gap: 6px; color: var(--text-primary); font-weight: 500; font-size: 0.95rem; text-decoration: none; 
+            border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: all 0.3s var(--ease-out);
             
-            i { transition: transform 0.4s var(--ease-out); }
+            i { transition: transform 0.3s var(--ease-out); }
             &:hover { 
-                border-color: var(--text-primary);
-                i { transform: translate(4px, -4px); }
+                border-color: var(--accent); color: var(--accent);
+                i { transform: translate(3px, -3px); }
             }
         }
 
-        /* --- STRUCTURALLY REFINED TIMELINE ENGINE --- */
-        .timeline { 
-            position: relative; 
-            display: flex; 
-            flex-direction: column; 
-        }
+        /* --- TIMELINE ENGINE --- */
+        .timeline { position: relative; display: flex; flex-direction: column; }
         
         .timeline-track {
             position: absolute; left: 5px; top: 12px; bottom: 0; width: 2px;
             background: var(--border-light); border-radius: 100px; z-index: 1;
-            mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
         }
 
         .timeline-progress {
             width: 100%; height: 100%;
-            background: linear-gradient(to bottom, #ffffff, #8f8f97);
+            background: linear-gradient(to bottom, var(--accent), var(--text-secondary));
             transform-origin: top; transform: scaleY(0); 
-            border-radius: 100px; box-shadow: 0 0 10px rgba(255,255,255,0.4);
+            border-radius: 100px;
         }
         
-        .timeline-item { position: relative; padding-left: 48px; padding-bottom: 64px; }
+        .timeline-item { position: relative; padding-left: 40px; padding-bottom: 56px; }
         .timeline-item:last-child { padding-bottom: 0; }
         
         .timeline-node { 
             position: absolute; left: 0; top: 6px; 
             width: 12px; height: 12px; border-radius: 50%; background: var(--bg); 
-            border: 2px solid var(--border-strong); transition: all 0.5s var(--ease-out); z-index: 2;
+            border: 2px solid var(--border-strong); transition: all 0.4s var(--ease-out); z-index: 2;
         }
         
-        .timeline-content {
-            opacity: 0.4; transform: translateX(-12px); transition: all 0.6s var(--ease-out);
-        }
+        .timeline-content { opacity: 0.5; transform: translateX(-8px); transition: all 0.5s var(--ease-out); }
 
         /* Active State */
         .timeline-item.is-active .timeline-node { 
-            border-color: #ffffff; background: #ffffff; 
-            box-shadow: 0 0 16px rgba(255,255,255,0.8), 0 0 0 4px rgba(255,255,255,0.1); 
-            transform: scale(1.3);
+            border-color: var(--accent); background: var(--accent); 
+            box-shadow: 0 0 12px var(--accent); 
+            transform: scale(1.2);
         }
         
-        .timeline-item.is-active .timeline-content {
-            opacity: 1; transform: translateX(0);
-        }
+        .timeline-item.is-active .timeline-content { opacity: 1; transform: translateX(0); }
         
-        .role { font-size: 1.5rem; font-weight: 500; margin-bottom: 8px; }
-        .company { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 16px; font-weight: 400; display: flex; align-items: center; gap: 8px;}
-        .duration { font-size: 0.85rem; color: var(--text-secondary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 24px; display: block;}
-        .timeline-desc { font-size: 1rem; color: var(--text-secondary); line-height: 1.6; font-weight: 300; max-width: 600px;}
+        .role { font-size: 1.35rem; font-weight: 600; margin-bottom: 4px; }
+        .company { font-size: 1rem; color: var(--text-secondary); margin-bottom: 12px; font-weight: 400; display: flex; align-items: center; gap: 6px;}
+        .duration { font-size: 0.8rem; color: var(--accent); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 16px; display: block;}
+        .timeline-desc { font-size: 0.98rem; color: var(--text-secondary); line-height: 1.6; font-weight: 400; max-width: 600px;}
 
         /* --- FOOTER / CONTACT --- */
-        footer { padding: 120px 0; text-align: center; }
-        .contact-title { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 500; letter-spacing: -0.04em; margin-bottom: 48px; }
+        footer { padding: 100px 0 60px; text-align: center; }
+        .contact-title { font-size: clamp(2.2rem, 5vw, 4.5rem); font-weight: 600; letter-spacing: -0.03em; margin-bottom: 36px; }
         
         .btn-large {
-            display: inline-flex; align-items: center; gap: 12px; background: #ffffff; color: var(--bg);
-            padding: 20px 48px; border-radius: 100px; font-size: 1.1rem; font-weight: 600; text-decoration: none; transition: all 0.4s var(--ease-out);
+            display: inline-flex; align-items: center; gap: 10px; background: #ffffff; color: var(--bg);
+            padding: 18px 40px; border-radius: 100px; font-size: 1rem; font-weight: 600; text-decoration: none; transition: all 0.3s var(--ease-out);
             
-            i { transition: transform 0.4s var(--ease-out); }
-            &:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(255,255,255,0.1); i { transform: translateX(4px); } }
+            i { transition: transform 0.3s var(--ease-out); }
+            &:hover { transform: translateY(-3px); background: #e4e4e7; i { transform: translateX(4px); } }
         }
 
-        .footer-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 120px; padding-top: 32px; border-top: 1px solid var(--border-light); color: var(--text-secondary); font-size: 0.9rem; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 100px; padding-top: 32px; border-top: 1px solid var(--border-light); color: var(--text-secondary); font-size: 0.88rem; }
         .socials { display: flex; gap: 24px; }
         .social-link { 
-            display: flex; align-items: center; gap: 8px; color: var(--text-secondary); text-decoration: none; transition: color 0.4s var(--ease-out); 
+            display: flex; align-items: center; gap: 6px; color: var(--text-secondary); text-decoration: none; transition: color 0.3s var(--ease-out); 
             &:hover { color: #ffffff; }
         }
 
         /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 900px) {
-            nav { padding: 24px; }
+            nav { padding: 18px 24px; }
             .nav-links { display: none; }
             
             .container { padding: 0 24px; }
-            .section-padding { padding: 100px 0; }
-            .section-header { grid-template-columns: 1fr; gap: 16px; margin-bottom: 48px; }
+            .section-padding { padding: 80px 0; }
+            .section-header { margin-bottom: 40px; }
             
-            .hero { grid-template-columns: 1fr; padding-top: 140px; min-height: auto; gap: 40px; }
-            .hero-image-wrapper { order: 1; max-height: 50vh; padding-top: 0; }
+            .hero { grid-template-columns: 1fr; padding-top: 120px; min-height: auto; gap: 32px; }
+            .hero-image-wrapper { order: 1; max-height: 45vh; }
             .hero-actions { width: 100%; flex-direction: column; align-items: stretch; }
             .btn-primary, .btn-outline { width: 100%; }
 
-            .about-grid { grid-template-columns: 1fr; gap: 40px; }
-            .project-item, .project-item:nth-child(even) { grid-template-columns: 1fr; gap: 32px; }
+            .about-grid { grid-template-columns: 1fr; gap: 32px; }
+            .project-item, .project-item:nth-child(even) { grid-template-columns: 1fr; gap: 24px; }
             .project-item:nth-child(even) .project-content { order: 0; }
-            .project-list { gap: 80px; }
+            .project-list { gap: 64px; }
             
-            .timeline-item { padding-left: 32px; padding-bottom: 48px; }
+            .timeline-item { padding-left: 28px; padding-bottom: 40px; }
             
-            .footer-bottom { flex-direction: column; gap: 24px; }
+            .footer-bottom { flex-direction: column; gap: 20px; }
         }
     </style>
 </head>
@@ -317,10 +303,10 @@
     <nav>
         <a href="/" class="nav-brand">Mayur Naik</a>
         <div class="nav-links">
-            <a href="https://mayur.qzz.io/subcats/about" class="nav-link">About</a>
-            <a href="https://mayur.qzz.io/subcats/works" class="nav-link">Work</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#work" class="nav-link">Work</a>
             <a href="#experience" class="nav-link">Experience</a>
-            <a href="https://mayur.qzz.io/subcats/contact" class="nav-link">Contact</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </div>
     </nav>
 
@@ -329,21 +315,21 @@
         <section class="hero">
             <div class="hero-content">
                 <div class="availability gsap-init">
-                    <div class="indicator"></div> Open to new opportunities
+                    <div class="indicator"></div> Open for freelance & full-time roles
                 </div>
                 <h1 class="hero-title text-metallic gsap-init">
                     Mayur Naik
-                    <span>Software Engineer.</span>
+                    <span>Full-Stack & Cloud Developer</span>
                 </h1>
                 <p class="hero-desc gsap-init">
-                    I build robust web architectures, scalable backend systems, and highly refined user interfaces. Based in India.
+                    Building fast web applications, reliable backend APIs, and clean user interfaces. Based in Karnataka, India.
                 </p>
                 <div class="hero-actions gsap-init">
                     <a href="#work" class="btn-primary">
-                        View Selected Work <i class="ph ph-arrow-right"></i>
+                        View Projects <i class="ph ph-arrow-right"></i>
                     </a>
                     <a href="https://github.com/yourusername" target="_blank" class="btn-outline">
-                        <i class="ph ph-github-logo"></i> View GitHub
+                        <i class="ph ph-github-logo"></i> GitHub
                     </a>
                 </div>
             </div>
@@ -355,17 +341,17 @@
 
         <section id="about" class="section-padding">
             <div class="section-header gsap-fade">
-                <div class="section-num">01</div>
+                <span class="section-num">01 //</span>
                 <h2 class="section-title text-metallic">About Me</h2>
             </div>
             
             <div class="about-grid">
                 <div class="gsap-fade">
                     <p class="about-text">
-                        I am an 18-year-old developer focused on the intersection of deep technical architecture and premium design.
+                        I’m a Computer Science student and full-stack developer who enjoys bringing ideas to life through code.
                     </p>
                     <p class="about-sub">
-                        While currently pursuing my Computer Science Engineering degree, I independently architect and deploy full-scale production applications. My philosophy is simple: write clean code, eliminate bloat, and engineer experiences that perform flawlessly.
+                        I focus on crafting end-to-end applications with clean TypeScript, efficient APIs, and intuitive designs. Whether I'm configuring cloud infrastructure or tweaking UI interactions, my goal is always to build software that is fast, accessible, and easy to maintain.
                     </p>
                 </div>
                 
@@ -377,15 +363,15 @@
                         </div>
                         <div class="info-item">
                             <dt class="info-label"><i class="ph ph-graduation-cap"></i> Education</dt>
-                            <dd class="info-val">Computer Science (B.Tech)</dd>
+                            <dd class="info-val">B.Tech in Computer Science</dd>
                         </div>
                         <div class="info-item">
-                            <dt class="info-label"><i class="ph ph-code"></i> Core Stack</dt>
-                            <dd class="info-val">React, Node, TypeScript</dd>
+                            <dt class="info-label"><i class="ph ph-code"></i> Core Tech</dt>
+                            <dd class="info-val">React, Next.js, Node.js, TypeScript</dd>
                         </div>
                         <div class="info-item">
-                            <dt class="info-label"><i class="ph ph-database"></i> Database</dt>
-                            <dd class="info-val">PostgreSQL, MongoDB</dd>
+                            <dt class="info-label"><i class="ph ph-database"></i> Databases & Cloud</dt>
+                            <dd class="info-val">PostgreSQL, MongoDB, AWS</dd>
                         </div>
                     </dl>
                 </div>
@@ -394,59 +380,45 @@
 
         <section id="work" class="section-padding">
             <div class="section-header gsap-fade">
-                <div class="section-num">02</div>
+                <span class="section-num">02 //</span>
                 <h2 class="section-title text-metallic">Selected Work</h2>
             </div>
 
             <div class="project-list">
                 <div class="project-item gsap-fade">
                     <div class="project-visual">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        <!-- Replace src with a screenshot/gif of your actual project -->
+                        <img src="https://images.unsplash.com/photo-1556742049-0a670f4a4591?q=80&w=1000&auto=format&fit=crop" alt="E-Commerce Platform Preview">
                     </div>
                     <div class="project-content">
                         <div class="project-meta">
-                            <span class="project-tag">Full Stack</span>
-                            <span class="project-tag">Next.js</span>
+                            <span class="project-tag">Next.js 14</span>
+                            <span class="project-tag">Stripe API</span>
+                            <span class="project-tag">Tailwind</span>
                         </div>
-                        <h3 class="project-title text-metallic">E-Commerce Architecture</h3>
+                        <h3 class="project-title text-metallic">Storefront Architecture</h3>
                         <p class="project-desc">
-                            A highly scalable e-commerce platform built with Next.js and Stripe. Features include server-side rendering for instantaneous load times, a custom headless CMS, and robust inventory management.
+                            A modern e-commerce application featuring server-side rendering, instant search, dynamic cart management, and seamless Stripe checkout integration.
                         </p>
-                        <a href="#" class="project-link">View Live Project <i class="ph ph-arrow-up-right"></i></a>
+                        <a href="#" class="project-link">View Live Demo <i class="ph ph-arrow-up-right"></i></a>
                     </div>
                 </div>
 
                 <div class="project-item gsap-fade">
                     <div class="project-visual">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Realtime Analytics Dashboard">
                     </div>
                     <div class="project-content">
                         <div class="project-meta">
-                            <span class="project-tag">Frontend</span>
-                            <span class="project-tag">WebGL / GSAP</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">WebSockets</span>
+                            <span class="project-tag">PostgreSQL</span>
                         </div>
-                        <h3 class="project-title text-metallic">Premium Web Portal</h3>
+                        <h3 class="project-title text-metallic">Real-Time Event Engine</h3>
                         <p class="project-desc">
-                            An Awwwards-inspired application portal leveraging custom WebGL shaders and GSAP for fluid, zero-latency animations. Optimized strictly for mobile GPU performance without sacrificing visual fidelity.
+                            A high-throughput streaming service designed to ingest and render dynamic data metrics with minimal latency via WebSocket connections.
                         </p>
-                        <a href="#" class="project-link">View Source Code <i class="ph ph-arrow-up-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="project-item gsap-fade">
-                    <div class="project-visual">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-meta">
-                            <span class="project-tag">Backend API</span>
-                            <span class="project-tag">Node / Postgres</span>
-                        </div>
-                        <h3 class="project-title text-metallic">Real-time Analytics API</h3>
-                        <p class="project-desc">
-                            Engineered a high-throughput RESTful API to process and serve live data streams via WebSockets. Secured with JWT authentication and protected by custom rate-limiting middleware.
-                        </p>
-                        <a href="#" class="project-link">View Repository <i class="ph ph-arrow-up-right"></i></a>
+                        <a href="#" class="project-link">View GitHub Repo <i class="ph ph-arrow-up-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -454,7 +426,7 @@
 
         <section id="experience" class="section-padding">
             <div class="section-header gsap-fade">
-                <div class="section-num">03</div>
+                <span class="section-num">03 //</span>
                 <h2 class="section-title text-metallic">Experience</h2>
             </div>
 
@@ -467,10 +439,10 @@
                     <div class="timeline-node"></div>
                     <div class="timeline-content">
                         <span class="duration">2023 — Present</span>
-                        <h3 class="role text-metallic">Freelance Software Engineer</h3>
-                        <p class="company"><i class="ph ph-buildings"></i> Independent</p>
+                        <h3 class="role text-metallic">Freelance Software Developer</h3>
+                        <p class="company"><i class="ph ph-buildings"></i> Self-Employed</p>
                         <p class="timeline-desc">
-                            Designing and developing custom web applications for independent clients. Managing the entire software lifecycle from database architecture to frontend deployment and server management.
+                            Building custom web solutions for individual clients. Handling end-to-end development, from designing UI wireframes to deploying backend APIs and managing server setup.
                         </p>
                     </div>
                 </div>
@@ -479,22 +451,10 @@
                     <div class="timeline-node"></div>
                     <div class="timeline-content">
                         <span class="duration">2022 — 2023</span>
-                        <h3 class="role text-metallic">Frontend Developer</h3>
-                        <p class="company"><i class="ph ph-git-merge"></i> Open Source Contributions</p>
+                        <h3 class="role text-metallic">Open Source Contributor</h3>
+                        <p class="company"><i class="ph ph-git-merge"></i> Community Development</p>
                         <p class="timeline-desc">
-                            Contributed to various open-source libraries. Focused on refining UI components, writing technical documentation, and optimizing bundle sizes for React-based projects.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-node"></div>
-                    <div class="timeline-content">
-                        <span class="duration">2021 — 2022</span>
-                        <h3 class="role text-metallic">Software Engineering Intern</h3>
-                        <p class="company"><i class="ph ph-code-block"></i> Tech Startup</p>
-                        <p class="timeline-desc">
-                            Assisted in developing scalable microservices and building interactive UI components for a B2B dashboard, directly reducing application load times by 30%.
+                            Contributing to frontend tools and libraries. Focused on fixing component bugs, enhancing accessibility features, and improving project documentation.
                         </p>
                     </div>
                 </div>
@@ -502,7 +462,7 @@
         </section>
 
         <footer id="contact">
-            <h2 class="contact-title text-metallic gsap-fade">Let's build something.</h2>
+            <h2 class="contact-title text-metallic gsap-fade">Let's build together.</h2>
             <div class="gsap-fade">
                 <a href="mailto:your.email@example.com" class="btn-large">
                     Get in Touch <i class="ph ph-paper-plane-tilt"></i>
@@ -512,9 +472,9 @@
             <div class="footer-bottom gsap-fade">
                 <p>© 2026 Mayur Naik. All rights reserved.</p>
                 <div class="socials">
-                    <a href="#" class="social-link"><i class="ph ph-github-logo"></i> GitHub</a>
-                    <a href="#" class="social-link"><i class="ph ph-linkedin-logo"></i> LinkedIn</a>
-                    <a href="#" class="social-link"><i class="ph ph-twitter-logo"></i> Twitter</a>
+                    <a href="https://github.com" class="social-link"><i class="ph ph-github-logo"></i> GitHub</a>
+                    <a href="https://linkedin.com" class="social-link"><i class="ph ph-linkedin-logo"></i> LinkedIn</a>
+                    <a href="https://x.com" class="social-link"><i class="ph ph-twitter-logo"></i> Twitter</a>
                 </div>
             </div>
         </footer>
@@ -526,45 +486,38 @@
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 
     <script>
-        // Fluid Smooth Scroll 
-        const lenis = new Lenis({
-            lerp: 0.07, 
-            smoothWheel: true
-        });
+        // Smooth Scroll
+        const lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
 
-        // Sync Lenis with GSAP
         gsap.registerPlugin(ScrollTrigger);
         lenis.on('scroll', ScrollTrigger.update);
         gsap.ticker.add((time) => { lenis.raf(time * 1000); });
         gsap.ticker.lagSmoothing(0);
 
-        // Immediate entry for Hero elements
-        gsap.to('.gsap-init', 
-            { opacity: 1, y: 0, duration: 1.2, stagger: 0.15, ease: "power4.out", delay: 0.1 }
-        );
+        // Entry animation for Hero
+        gsap.to('.gsap-init', { opacity: 1, y: 0, duration: 1, stagger: 0.12, ease: "power3.out", delay: 0.1 });
 
-        // Standard Scroll Reveal for basic sections
+        // Scroll Reveal
         gsap.utils.toArray('.gsap-fade').forEach(element => {
             gsap.to(element, { 
-                scrollTrigger: { trigger: element, start: "top 85%", toggleActions: "play none none none" },
-                opacity: 1, y: 0, duration: 1.2, ease: "power4.out"
+                scrollTrigger: { trigger: element, start: "top 88%", toggleActions: "play none none none" },
+                opacity: 1, y: 0, duration: 1, ease: "power3.out"
             });
         });
 
-        // REFINED TIMELINE ENGINE
-        // 1. Draw the line mapped perfectly to the viewport center
+        // Timeline Progress Bar
         gsap.to(".timeline-progress", {
             scrollTrigger: {
                 trigger: ".timeline",
                 start: "top 50%",    
                 end: "bottom 50%",   
-                scrub: 1             
+                scrub: true            
             },
             scaleY: 1,
             ease: "none"
         });
 
-        // 2. Light up nodes precisely as the line hits them
+        // Timeline Item Active Highlights
         gsap.utils.toArray('.timeline-item').forEach(item => {
             ScrollTrigger.create({
                 trigger: item,
